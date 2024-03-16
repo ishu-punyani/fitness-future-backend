@@ -6,7 +6,13 @@ const bcrypt = require('bcryptjs')
 const app = express()
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
-app.use(cors())
+app.use(cors(
+    {
+        origin: ["https://fitness-future-backend.vercel.app"],
+        methods: ["POST", "GET"],
+        credentials: true
+    }   
+))
 
 // mongodb://localhost:27017
 //mongodb+srv://punyaniishant:qvkm15E0ILMEMb4N@ishant18.5g4skkh.mongodb.net/
@@ -174,6 +180,6 @@ app.post('/products', async(req,res)=>{
     res.status(201).send({message: 'Order Placed Successfully'})
 })
 
-app.listen("0.0.0.0",()=>{
-    console.log("Server started at http://localhost:0.0.0.0")
+app.listen("4040",()=>{
+    console.log("Server started at http://localhost:4040")
 })
