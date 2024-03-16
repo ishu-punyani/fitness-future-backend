@@ -174,6 +174,6 @@ app.post('/products', async(req,res)=>{
     res.status(201).send({message: 'Order Placed Successfully'})
 })
 
-app.listen("4040",()=>{
-    console.log("Server started at http://localhost:4040")
+app.listen("0.0.0.0",()=>{
+    console.log("Server started at http://localhost:0.0.0.0")
 })
